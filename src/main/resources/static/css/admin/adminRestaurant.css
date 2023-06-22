@@ -1,0 +1,15 @@
+@charset "UTF-8";
+nav {
+	display:flex;
+	justify-content:center;
+}
+.title1 {
+	margin:50px 50px 50px 50px;
+}
+#tbl_adrtRestaurant {
+	text-align: center;
+}
+.fileView {
+	width: 100px;
+	height: 100px;
+}

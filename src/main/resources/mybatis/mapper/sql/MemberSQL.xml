@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.example.demo.member.MemberDAO">
+	<select id="check_duplicateID" resultType="_int">
+		select count(id)
+		from member
+		where id = #{param1}
+	</select>
+	
+	<select id="get_id" resultType="string">
+		select id
+		from member
+		where id = #{param1} and pw =#{param2}
+	</select>
+	
+	<select id="check_phone" resultType="_int">
+		select count(phone)
+		from member
+		where phone = #{param1}
+	</select>
+
+	<select id="search_id" resultType="string">
+		select id
+		from member
+		where name = #{param1} and phone = #{param2}
+	</select>
+	
+	<select id="search_pw" resultType="int">
+		select count(*) 
+		from member 
+		where id = #{param1} and name = #{param2} and phone = #{param3}
+	</select>
+	
+	<insert id="submit_signup">
+		insert into member
+		values (#{param1},#{param2},#{param3},
+		#{param4},#{param5},#{param6})
+	</insert>
+	
+	<update id="update_pw">
+		update member
+		set pw = #{param4}
+		where id = #{param1} and name = #{param2} and phone = #{param3}
+	</update>
+	
+	<select id="get_signupInfo" resultType="project.example.demo.dto.MemberDTO">
+		select *
+		from member
+		where id = #{param1}
+	</select>
+	
+	<update id="update_signup">
+		update member
+		set
+			pw = #{param2}, name = #{param3}, gender = #{param4}, 
+			birth = #{param5}, phone = #{param6}
+		where id = #{param1}
+	</update>
+	
+	<select id="get_userReviewCount" resultType="_int">
+		select count(*)
+		from review
+		where rv_id = #{param1}
+	</select>
+	
+</mapper>

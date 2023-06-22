@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.example.demo.main.MainDAO">
+	<select id="check_duplicateLocation" resultType="project.example.demo.dto.RestaurantDTO">
+		select r_name, category, address
+		from restaurant
+		where address = #{param1}
+	</select>
+	
+	<select id="get_member_name" resultType="string">
+		select name
+		from member
+		where id = #{param1}
+	</select>
+	
+	<select id="check_duplicateRequest" resultType="_int">
+		select count(*)
+		from admin_restaurant
+		where adrt_r_name = #{param1}
+		and adrt_address = #{param2}
+	</select>
+		
+	<insert id="restaurant_approval_request">
+		insert into admin_restaurant
+		values(#{param1},#{param2},#{param3, jdbcType=VARCHAR},#{param4},
+		#{param5, jdbcType=VARCHAR},#{param6},#{param7},#{param8, jdbcType=VARCHAR})
+	</insert>
+	
+	<update id="restaurant_update_request">
+		update admin_restaurant
+		set adrt_lat = #{param1},
+		adrt_lng = #{param2},
+		adrt_primecode = #{param3},
+		adrt_r_name = #{param4},
+		adrt_owner = #{param5},
+		adrt_category = #{param6},
+		adrt_localurl = #{param8}
+		where adrt_address = #{param7}
+	</update>
+	
+	<select id="admin_search" resultType="string">
+		select adrt_address
+		from admin_restaurant
+		where adrt_primecode = #{param1}
+	</select>
+	
+	<select id="get_searchFilterLIst" resultType="project.example.demo.dto.RestaurantDTO">
+		${param1}
+	</select>
+	
+	<select id="countMyReviewList" resultType="_int">
+		select count(*)
+		from review
+		where rv_id = #{param1}
+	</select>
+	
+	<select id="getMyReviewList" resultType="project.example.demo.dto.ReviewDTO">
+		select *
+		from(
+			select a.*, rownum r
+			from(
+				select rv_photo,rv_r_name,rv_time,rv_detail,rv_address
+				from review
+				where rv_id = #{param1}
+				order by rv_time desc
+			) a
+			where rownum <![CDATA[<=]]> #{param3}
+		)
+		where r <![CDATA[>=]]> #{param2}
+	</select>
+	
+	<select id="countMyStoreList" resultType="_int">
+		select count(*)
+		from restaurant
+		where owner = #{param1}
+	</select>
+	
+	<select id="getMyStoreList" resultType="project.example.demo.dto.RestaurantDTO">
+		select *
+		from(
+			select a.*, rownum r
+			from(
+				select r_name, category, address
+				from restaurant
+				where owner = #{param1}
+			) a
+			where rownum <![CDATA[<=]]> #{param3}
+		) 
+		where r <![CDATA[>=]]> #{param2}
+	</select>
+</mapper>

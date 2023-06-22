@@ -1,0 +1,21 @@
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+article {
+	width: 20vw;
+}
+h1 {
+    margin-bottom: 3%;
+}
+pre {
+	margin-top: 10px;
+}
+#button_findID {
+	width: 100%;
+}

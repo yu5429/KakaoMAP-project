@@ -1,0 +1,394 @@
+@font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MBC1961GulimM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#EEE3CB;
+  font-family: 'SUITE-Regular', sans-serif;
+}
+
+iframe {
+  width: 100%;
+  height: 100vh;
+  border: none;
+}
+
+pre {
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+section {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+textarea {
+	resize:none;
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+textarea:focus {
+	outline:none;
+}
+
+input:focus {
+	outline:none;
+}
+
+.whiteblock {
+	margin-bottom: 2%;
+	border: 1px solid #FFFFFF;
+	padding: 10px;
+	background-color:#FFFFFF;
+}
+
+#restaurant_image {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#restaurant_image img {
+  width: 200px;
+  height: auto;
+}
+
+#restaurant_name {
+  text-align: center;
+}
+
+#restaurant_name p {
+  background-color: transparent;
+  text-align:center;
+  font-weight: bold;
+  border:none;
+  margin: 5px 0 5px 0;
+}
+
+#rName{
+	text-align:center;
+	font-size: 25px;
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+#rCategory {
+	width: 25px;
+	height: 25px;
+}
+
+#rDetail {
+	min-width: 50vw;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.editable_detail {
+	border: none;
+}
+
+label[for='rPhone'] {
+	min-width: 150px;
+	margin:0 0 0 10px;
+}
+
+
+#restaurant_detail {
+	display: flex;
+}
+
+#restaurant_detail p {
+	display: flex;
+	align-items: center;
+	font-size:16px;
+	margin-left:2%;
+	font-weight: bold;	
+}
+
+.detail_logos {
+	width: 20px;
+	height: 20px;
+	margin: 0 10px 0 0;
+}
+
+#restaurant_detail svg{
+	margin-right:1%;
+}
+
+#restaurant_detail input{
+	border:none;
+	font-size:15px;
+	font-family: 'MBC1961GulimM', sans-serif;
+}
+
+#rMenu{
+	font-size:20px;
+	width:100%;
+	height:100%;
+}
+
+#restaurant_tag{
+	min-height: 450px;
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+#restaurant_tag input{
+	font-size:20px;
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+.tag_label input[type="checkbox"] {
+    display: none;
+}
+
+.tag_label input[type="checkbox"] + span {
+    display: inline-block;
+    padding: 10px 10px;
+    border: 1px solid #dfdfdf;
+    background-color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom:1%;
+}
+
+.tag_label input[type="checkbox"]:checked + span {
+    background-color: #d0d0d0;
+    color: black;
+}
+
+.whiteblock pre{
+	font-size:18px;
+	margin-left:2%;
+	font-weight: bold;
+}
+
+#restaurant_tag input{
+	background-color: transparent;
+  	font-weight: bold;
+  	border:none;
+}
+
+#infoUp{
+	text-align:right;
+}
+
+a{
+	color:black;
+	text-decoration:none;
+}
+
+#reviewAllModal textarea, button{
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+#reviewModal textarea{
+	font-family: 'SUITE-Regular', sans-serif;
+}
+
+.review_myTable td{
+	overflow:hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	min-width:0;
+
+}
+
+.page-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 0;
+}
+
+.page-links li {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.page-links a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  background-color: #f2f2f2;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.page-links a:hover {
+  background-color: #ddd;
+}
+
+.page-links a:active {
+  background-color: #ddd;
+  color: white;
+}
+
+.page-links .disabled a {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#reviewPhoto_list {
+    display: flex;
+    width: 80%;
+    height: fit-content;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: auto;
+}
+
+#reviewPhoto_list img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.ownercontent{
+	border:1px solid #393646;
+}
+.ownerc{
+	pointer-events: none;
+}
+
+.owner_wrapper {
+	display: flex;
+	margin-left: auto;
+	align-items: flex-start;
+}
+
+.owner_submit {
+	margin: 0 20px 0 0;
+}
+
+.owner_edit, .owner_submit, .owner_cancel {
+	width: 25px;
+	height: 25px;
+}
+
+#mebutton {
+	margin: 0 10px 0 0;
+}
+
+#menuTable {
+	width: 100%;
+}
+
+.tdIndent {
+	width: 50px;
+}
+
+.btn.tableButton {
+	height: 30px;
+    --bs-btn-padding-x: 0.5rem;
+    --bs-btn-padding-y: 0rem;
+}
+
+#menuTable tbody tr td:nth-child(2) {
+	width: fit-content;
+}
+
+#graph_container {
+	width: 80%; 
+	height: 80%; 
+	margin: auto;
+}
+
+#review_beforePreview {
+	display: none;
+	width: 100px;
+	height: 100px;
+	margin: 0 0 0 20px;
+}
+
+label[for="review_beforePreview"] {
+	position: relative;
+	top: -36px;
+	width: 20px;
+	height: 20px;
+	background: url('/img/detail/ImageCancel.png') no-repeat;
+}
+
+#review_writeDetail, #my_ceoReply {
+	width: 50%;
+	min-height: 20vh;
+}
+
+#review_writeDetail:hover {
+	border: solid 1px black;
+}
+
+#review_list_block {
+	margin: 0 0 0 20px;
+}
+
+#review_list_block p {
+	margin: 0;
+}
+
+#review_list_block div {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+}
+
+#review_list_block .photo_modal {
+	width: 100px;
+	height: 100px;
+}
+
+#review_list_pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.imageUpload {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	background: url('/img/detail/ImageUpload.png') no-repeat;
+}
+
+.imageUpload:hover {
+	background: url('/img/detail/ImageUploadHover.gif') no-repeat;
+}
+
+.review_modal:hover {
+	font-weight: bold;
+}
+
+#review_modal_content {
+	padding: 10px;
+}
+
+.rvm_image {
+	width:100px; 
+	height: 100px;
+	margin: 0 0 20px 0;
+}
+
+.rvm_textarea {
+	resize:none;
+	font-family: 'SUITE-Regular', sans-serif;
+	height: 20vh;
+	margin: 0 0 10px 0;
+}
